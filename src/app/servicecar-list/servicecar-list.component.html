@@ -1,0 +1,45 @@
+<app-service-ticket-form #serviceTicketModal></app-service-ticket-form>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="mt-5">
+
+                <div class="card">
+                    <h3>Upcoming Service Cars</h3>
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body">
+                     <div style="overflow-x:auto">
+
+                        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered">
+                            <thead class="bg-dark text-white">
+                                <tr>
+                                    <td>PlateNo</td>
+                                    <td>CarModel</td>
+                                    <td>Manufacturing Year</td>
+                                    <td>Upcoming Service Date</td>
+                                    <td>Driver Id</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let car of serviceCarList">
+                                    <td>{{ car.plateNo }}</td>
+                                    <td>{{ car.carModel }}</td>
+                                    <td>{{ car.manufacturingYear }}</td>
+                                    <td>{{ car.upcomingServiceDate }}</td>
+                                    <td>{{ car.driverId }}</td>
+                                    <td>
+                                        <a class="btn btn-primary" (click)="onClickService(car)" >Service</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

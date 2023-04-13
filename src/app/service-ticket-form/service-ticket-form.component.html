@@ -1,0 +1,43 @@
+<!-- Button trigger modal -->
+<button #showModal type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" hidden>
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Service Ticket</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form (ngSubmit)="onSaveServiceTicket(serviceTicketForm)" #serviceTicketForm="ngForm">
+                    <div class="mb-3">
+                        <label for="lastServiceMileageInput" class="form-label">Last Service Mileage</label>
+                        <input required ngModel name="lastServiceMileage" type="number" class="form-control" id="lastServiceMileageInput">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastServiceDateInput" class="form-label">Last Service Date</label>
+                        <input required ngModel name="lastServiceDate" type="date" class="form-control" id="lastServiceDateInput">
+                    </div>
+                    <div class="mb-3">
+                        <label for="serviceDescriptionInput" class="form-label">Service Description</label>
+                        <input required ngModel name="serviceDescription" type="text" class="form-control" id="serviceDescriptionInput">
+                    </div>
+                    <div class="mb-3">
+                        <label for="serviceCostInput" class="form-label">Service Cost</label>
+                        <input required ngModel name="serviceCost" type="number" class="form-control" id="serviceCostInput">
+                    </div>
+                    <div class="mb-3">
+                        <label for="upcomingServiceInput" class="form-label">Upcoming Service</label>
+                        <input required ngModel name="upcomingServiceDate" type="date" class="form-control" id="upcomingServiceInput">
+                    </div>
+                    <button [disabled]="!serviceTicketForm.valid" type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="mt-5">
+                <div class="card">
+                    <div class="d-flex justify-content-around pt-2">
+                        <div>
+                            <h3>{{ tableTitle }}</h3>
+                        </div>
+                        <div class="btn-group">
+                            <button (click)="onClickUpcoming()"  class="btn btn-success">Upcoming Service</button>
+                            <button (click)="onClickHistory()" class="btn btn-primary">History</button>                          
+                        </div>   
+                         
+                    </div>
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body">
+                        <div style="overflow-x:auto">
+
+                        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered">
+                            <thead class="bg-dark text-white">
+                                <tr>
+                                    <td>PlateNo</td>
+                                    <td>Last Mileage</td>
+                                    <td>Last Service</td>
+                                    <td>Description</td>
+                                    <td>Upcoming Service</td>
+                                    <td>Service Engineer</td>
+                                    <td *ngIf="showCost">ServiceCost</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let ticket of serviceTicketList">
+                                    <td>{{ ticket.serviceCar.plateNo }}</td>
+                                    <td>{{ ticket.lastServiceMileage }}</td>
+                                    <td>{{ ticket.lastServiceDate }}</td>
+                                    <td>{{ ticket.serviceDescription }}</td>
+                                    <td>{{ ticket.upcomingServiceDate }}</td>
+                                    <td>{{ ticket.serviceEngineerName }}</td>
+                                    <td *ngIf="showCost">{{ ticket.serviceCost }}</td>
+                                </tr>
+                            </tbody>
+                
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

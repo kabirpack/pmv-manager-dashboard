@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">PMV Manager</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/regCar" 
+            *ngIf="isAuthenticated && isAdmin"
+            data-bs-toggle="collapse" 
+            data-bs-target=".navbar-collapse.show">Register Car </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" 
+            routerLink="/carList"
+            *ngIf="isAuthenticated && isAdmin"
+            data-bs-toggle="collapse" 
+            data-bs-target=".navbar-collapse.show">View Car</a>
+          </li>
+        </ul>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav navbar-right">
+          <li>
+            <a *ngIf="!isAuthenticated" class="nav-link" routerLink="/auth" >Login</a>
+          </li>
+          <li>
+            <a (click)="onLogout()" *ngIf="isAuthenticated" class="nav-link" style="cursor:pointer">Logout</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </nav>

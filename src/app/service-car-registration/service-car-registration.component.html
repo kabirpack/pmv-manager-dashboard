@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="mt-5">
+                
+                <form (ngSubmit)="onSaveServiceCar(serviceCarForm)" #serviceCarForm="ngForm">
+                    <fieldset class="border p-2">
+                        <legend  class="w-auto"><h3>Register Car</h3></legend>
+                        <div class="mb-3">
+                            <label for="plateNoInput" class="form-label">Plate Number</label>
+                            <input required ngModel name="plateNo" type="number" class="form-control" id="plateNoInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="carModelInput" class="form-label">Car Model</label>
+                            <input required ngModel name="carModel" type="text" class="form-control" id="carModelInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="manufacturingYearInput" class="form-label">Manufacturing Year</label>
+                            <input required ngModel name="manufacturingYear" type="text" class="form-control" id="manufacturingYearInput">
+                        </div>
+
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="upcomingServiceInput" class="form-label">Upcoming Service</label>
+                                <input required ngModel name="upcomingServiceDate" type="date" class="form-control" id="upcomingServiceInput">
+                            </div>
+                            <div class="col mb-3">
+                                <label for="SelectDriver" class="form-label">Choose Driver Id</label>
+                                <select required ngModel name="driverId"  class="form-control">
+                                    <option *ngFor="let id of driverIds" [ngValue]="id">{{ id }}</option>
+                                </select>
+                            </div>    
+                        </div>  
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </fieldset>
+
+                  </form>
+
+                  
+
+            </div>
+        </div>
+    </div>
+</div>
+
