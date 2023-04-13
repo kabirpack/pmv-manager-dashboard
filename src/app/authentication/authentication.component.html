@@ -18,7 +18,7 @@
             </div>
             <div class="row">
               <div class="pt-2">
-                <button type="submit" class="btn btn-primary">Login</button> 
+                <button [disabled]="!authForm.valid" type="submit" class="btn btn-primary">Login</button> 
               </div>
             </div>
           </form>

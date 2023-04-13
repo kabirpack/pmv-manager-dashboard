@@ -24,7 +24,7 @@ export class ServiceTicketListComponent implements OnInit {
     private auth: AuthenticationService) { }
 
   ngOnInit(): void {
-
+      this.onClickUpcoming();
       this.dtoptions={
         pagingType: 'simple_numbers'
       };

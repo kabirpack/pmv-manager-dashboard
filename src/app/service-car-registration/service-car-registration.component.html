@@ -32,7 +32,7 @@
                             </div>    
                         </div>  
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button [disabled]="!serviceCarForm.valid" type="submit" class="btn btn-primary">Submit</button>
                     </fieldset>
 
                   </form>
