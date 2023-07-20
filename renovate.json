@@ -4,5 +4,11 @@
     "config:base"
   ],
   "prHeader": "Sample Renovate Merge Request",
-  "assignees": ["kabirpack"]
+  "assignees": ["kabirpack"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["angular"],
+      "labels": ["angular change"]
+    }
+  ]
 }
