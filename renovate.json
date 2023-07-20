@@ -2,5 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
-  ]
+  ],
+  "prHeader": "Sample Renovate Merge Request",
+  "assignees": ["kabirpack"]
 }
